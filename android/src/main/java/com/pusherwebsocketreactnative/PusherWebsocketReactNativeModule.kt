@@ -265,8 +265,8 @@ class PusherWebsocketReactNativeModule(reactContext: ReactApplicationContext) :
     )
   }
 
-  override fun userUnsubscribed(channelName: String, user: User) { 
-    if (user != null) {  
+  override fun userUnsubscribed(channelName: String, user: User?) {
+    if (user != null) {
       val gson = Gson()
       pusherEventEmitter.emit(
         "onMemberRemoved", mapOf(
